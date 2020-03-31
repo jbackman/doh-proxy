@@ -3,7 +3,8 @@ FROM golang:alpine AS build-env
 RUN apk add --no-cache git make
 
 WORKDIR /src
-ADD . /src
+RUN git clone git@github.com:m13253/dns-over-https.git
+ADD. /src
 RUN make doh-server/doh-server
 
 FROM alpine:latest
