@@ -4,7 +4,6 @@ RUN apk add --no-cache git make
 
 WORKDIR /src
 RUN git clone git@github.com:m13253/dns-over-https.git
-ADD. /src
 RUN make doh-server/doh-server
 
 FROM alpine:latest
