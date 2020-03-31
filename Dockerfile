@@ -4,7 +4,7 @@ RUN apk add --no-cache git make
 
 WORKDIR /src
 
-RUN git clone git@github.com:m13253/dns-over-https.git
+RUN git clone https://github.com/m13253/dns-over-https.git
 
 WORKDIR /src/dns-over-https
 
