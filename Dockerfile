@@ -14,7 +14,7 @@ FROM alpine:latest
 
 COPY --from=build-env /src/dns-over-https/doh-server/doh-server /doh-server
 
-COPY --from=build-env /src/dns-over-https/doh-server.conf /doh-server.conf
+COPY --from=build-env /src/dns-over-https/doh-server/doh-server.conf /doh-server.conf
 
 RUN sed -i '$!N;s/"127.0.0.1:8053",\s*"\[::1\]:8053",/":8053",/;P;D' /doh-server.conf
 
